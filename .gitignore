@@ -2,8 +2,10 @@ tags
 _site/
 .jekyll-cache/
 .sass-cache/
+.bundle/
 .DS_Store
 Gemfile.lock
 package-lock.json
 node_modules/
+vendor/bundle/
 .worktrees/

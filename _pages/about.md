@@ -31,6 +31,12 @@ permalink: /about/
 </div>
 </div>
 
+<div class="section-card">
+<h3>Profile</h3>
+<p>I am an undergraduate student in Computer Science and Technology at Northeastern University. My current interests include algorithmic problem solving, robotics, embodied AI, and machine learning.</p>
+<p>Through programming and robotics competitions, I am building practical problem-solving skills and exploring intelligent systems that can operate in real-world environments.</p>
+</div>
+
 {% if site.data.grants %}
 <div class="section-card">
 <h3>Grants</h3>

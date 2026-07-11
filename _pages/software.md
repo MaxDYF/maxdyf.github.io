@@ -7,6 +7,9 @@ permalink: /software/
 
 ## Software
 
+{% comment %}
+Default template software projects. Replace with your own projects before enabling.
+
 <div class="section-card">
 <h4>Path Integral Monte Carlo</h4>
 <div class="pub-actions" style="margin-bottom: var(--space-3);">
@@ -25,3 +28,4 @@ permalink: /software/
 <p><strong>Authors:</strong> <em>R. P. Feynman</em></p>
 <p>A tool for systematically enumerating and evaluating Feynman diagrams in quantum electrodynamics calculations, automating the computation of scattering amplitudes to arbitrary order in perturbation theory.</p>
 </div>
+{% endcomment %}

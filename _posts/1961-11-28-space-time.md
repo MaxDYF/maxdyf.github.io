@@ -3,6 +3,7 @@ layout: post
 title: "Space-Time"
 date: 1961-11-28
 categories: "Lecture Notes"
+published: false # Default template post; enable only after replacing it with your own work.
 ---
 
 ## Lorentz transformation

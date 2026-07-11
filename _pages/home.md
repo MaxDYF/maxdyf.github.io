@@ -4,9 +4,22 @@ layout: homelay
 sitemap: false
 permalink: /
 ---
-
 <h2 class="home-hero">{{ site.name }}</h2>
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
+
+<div class="chip-container" markdown="0">
+<!-- <span class="chip">Algorithm </span> -->
+<span class="chip">Robotics</span>
+<span class="chip">Embodied AI</span>
+</div>
+
+I am Yifei Deng (邓逸飞), a 3-year undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus. My research interest focuses on Embodied AI，especially on how to scale up simulated data and narrow down the gap between simulation and reality.
+
+I have participated in serveral programming contests, and won Silver Medal in ICPC Asia East Region Contest (2024, 2025), and Bronze Medal in ICPC Asia East Continent Final (2025).
+
+{% comment %}
+Default template content for a theoretical-physics profile. Replace with your own
+research interests and biography before enabling it.
 
 <div class="chip-container" markdown="0">
 <a href="{{ site.url }}{{ site.baseurl }}/research" class="chip">Quantum Electrodynamics</a>
@@ -37,3 +50,4 @@ I am a physicist working in the field of quantum mechanics and quantum electrody
 I received my undergraduate degree in physics from the Massachusetts Institute of Technology (MIT) in 1939 and went on to earn my PhD from Princeton University in 1942.
 After completing my doctoral studies, I worked on the Manhattan Project, where I helped develop the first atomic bombs.
 After the war, I returned to academia, holding teaching and research positions at Cornell and now at the California Institute of Technology.
+{% endcomment %}

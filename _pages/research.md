@@ -7,6 +7,9 @@ permalink: /research/
 
 ## Research
 
+{% comment %}
+Default template research cards. Add your own projects here before enabling this section.
+
 <div class="research-grid">
 
 <div class="research-card">
@@ -58,3 +61,4 @@ permalink: /research/
 </div>
 
 </div>
+{% endcomment %}

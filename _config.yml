@@ -1,22 +1,22 @@
 # ============================================================
 # STEP 1: Your Identity (required)
 # ============================================================
-name: "Richard Feynman"
-title: "Professor of Physics"
-institution: "California Institute of Technology"
-email: richard@university.edu
+name: "Yifei Deng"
+title: "Undergraduate Student in Computer Science and Technology"
+institution: "Northeastern University"
+email: dengyf@mails.neu.edu.cn
 photo: headshot.jpg  # place your photo in images/
 
 # ============================================================
 # STEP 2: Your Links (optional -- delete any you don't use)
 # ============================================================
 links:
-  google_scholar: "https://scholar.google.com/citations?user=B7vSqZsAAAAJ"
-  github: "https://github.com/"
-  researchgate: "https://www.researchgate.net/"
-  orcid: ""
-  twitter: ""
-  linkedin: ""
+  # google_scholar: "https://scholar.google.com/citations?user=B7vSqZsAAAAJ"
+  github: "https://github.com/MaxDYF"
+  # researchgate: "https://www.researchgate.net/"
+  orcid: "https://orcid.org/0009-0006-1527-4882"
+  # twitter: ""
+  # linkedin: ""
   cv: ""  # e.g., "papers/cv.pdf" — leave blank to hide the CV icon
 
 # ============================================================
@@ -24,7 +24,7 @@ links:
 # ============================================================
 accent_color: "#1a7a6d"      # theme color for links and buttons
 dark_mode: true              # show dark mode toggle in navbar
-description: "Academic webpage of Dr. Richard Feynman"
+description: "Yifei Deng's Academic Website"
 baseurl: ""
 url: ""
 
@@ -36,14 +36,14 @@ analytics:
 # STEP 4: Choose Your Pages (comment out any you don't need)
 # ============================================================
 nav_pages:
-  - name: about
-  - name: publications
-  - name: talks
-  - name: research
-  - name: software
-  - name: team
-  - name: teaching
-  - name: blogs
+  # - name: about
+  # - name: publications
+  - name: competitions
+  # - name: research
+  # - name: software
+  # - name: team
+  # - name: teaching
+  # - name: blogs
 
 # ============================================================
 # Advanced Settings (you probably don't need to change these)
@@ -76,8 +76,8 @@ kramdown:
 plugins: ["jekyll/scholar", "jekyll-sitemap"]
 
 scholar:
-  last_name: Doe
-  first_name: [John]
+  last_name: Deng
+  first_name: [Yifei, Y.]
   style: citesty
   locale: en
   source: /assets/

@@ -285,8 +285,14 @@ __Using this template? Share your site and I'll add it here!__
 
 1. **Fork** [this repository](https://github.com/sbryngelson/academic-website-template)
 2. **Delete** `_config_demo.yml` (it's only for the demo site)
-3. **Install** [Jekyll](https://jekyllrb.com/docs/installation/) and run `bundle install`
-3. **Configure** your site:
+3. **Install** Ruby 3.1 or newer (Ruby 3.3 is recommended), then install the dependencies:
+
+   ```bash
+   ruby -v
+   gem install bundler
+   bundle install
+   ```
+4. **Configure** your site:
    ```bash
    ./setup.sh          # interactive setup, or
    vim _config.yml     # edit Steps 1-4 directly
@@ -311,7 +317,16 @@ cd YOUR_USERNAME.github.io
 
 ### Step 2: Install Dependencies
 
-You need Ruby and Jekyll installed. See [Jekyll's installation guide](https://jekyllrb.com/docs/installation/).
+You need Ruby 3.1 or newer. See [Jekyll's installation guide](https://jekyllrb.com/docs/installation/). The Ruby bundled with macOS is too old for this project's dependencies.
+
+On Apple Silicon Macs, you can install the recommended Ruby version with Homebrew:
+
+```bash
+brew install ruby@3.3
+echo 'export PATH="/opt/homebrew/opt/ruby@3.3/bin:/usr/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+ruby -v
+```
 
 ```bash
 # Install Ruby gems
