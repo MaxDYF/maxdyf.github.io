@@ -33,8 +33,19 @@ permalink: /about/
 
 <div class="section-card">
 <h3>Profile</h3>
-<p>I am an undergraduate student in Computer Science and Technology at Northeastern University. My current interests include algorithmic problem solving, robotics, embodied AI, and machine learning.</p>
-<p>Through programming and robotics competitions, I am building practical problem-solving skills and exploring intelligent systems that can operate in real-world environments.</p>
+<p>I am a third-year undergraduate student in Computer Science and Technology at Northeastern University at Qinhuangdao. My research interests lie in embodied AI, with a particular focus on scaling simulated data and bridging the gap between simulation and reality.</p>
+</div>
+
+<div class="section-card">
+<h3>Research Experience</h3>
+<p>I am currently a Research Assistant at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.</p>
+<p>Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025. There, I worked on benchmarks for robots in industrial environments.</p>
+</div>
+
+<div class="section-card">
+<h3>Competitions</h3>
+<p>I actively participate in programming, robotics, and embodied AI competitions. My recent results include silver medals in the ICPC Asia East Regional Contest in 2024 and 2025, as well as a bronze medal in the ICPC Asia East Continent Final in 2025.</p>
+<p>For a complete list of results, please visit the <a href="{{ site.url }}{{ site.baseurl }}/competitions">Competitions</a> page.</p>
 </div>
 
 {% if site.data.grants %}
