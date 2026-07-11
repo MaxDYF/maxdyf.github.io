@@ -32,20 +32,24 @@ permalink: /about/
 </div>
 
 <div class="section-card">
-<h3>Profile</h3>
-<p>I am a third-year undergraduate student in Computer Science and Technology at Northeastern University at Qinhuangdao. My research interests lie in embodied AI, with a particular focus on scaling simulated data and bridging the gap between simulation and reality.</p>
+<h3>🧭 Academic Direction</h3>
+<p>I study <strong>Computer Science and Technology</strong> at <strong>Northeastern University at Qinhuangdao</strong>. I am drawn to embodied AI because it connects learning-based methods with the practical challenges of perception, interaction, and deployment in the physical world.</p>
+<p>My current interests center on simulation, synthetic data, and the sim-to-real gap: how simulated environments and data can support more capable and reliable robotic systems.</p>
 </div>
 
 <div class="section-card">
-<h3>Research Experience</h3>
-<p>I am currently a Research Assistant at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.</p>
-<p>Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025. There, I worked on benchmarks for robots in industrial environments.</p>
+<h3>📍 Selected Milestones</h3>
+<ul>
+<li><strong>2023-present:</strong> B.Eng. student in Computer Science and Technology, Northeastern University at Qinhuangdao.</li>
+<li><strong>March 2025:</strong> Joined the <strong>Language and Intelligent Systems Lab</strong>, contributing to benchmarks for robots in industrial environments.</li>
+<li><strong>Current:</strong> Research Assistant at <strong>The Hong Kong University of Science and Technology (Guangzhou)</strong>, advised by <strong>Haoang Li</strong>.</li>
+</ul>
 </div>
 
 <div class="section-card">
-<h3>Competitions</h3>
-<p>I actively participate in programming, robotics, and embodied AI competitions. My recent results include a Gold Prize in the 2026 CCPC National Invitational Contest (Qinhuangdao), silver medals in the ICPC Asia East Regional Contest in 2024 and 2025, and a bronze medal in the ICPC Asia East Continent Final in 2025.</p>
-<p>For a complete list of results, please visit the <a href="{{ site.url }}{{ site.baseurl }}/competitions">Competitions</a> page.</p>
+<h3>🏆 Challenge and Practice</h3>
+<p>Competitive programming, robotics, and embodied AI challenges are an important part of how I develop practical problem-solving skills. They offer a disciplined setting to work under constraints, learn quickly, and turn technical ideas into working systems.</p>
+<p>My competition record includes a <strong>Gold Prize</strong> at the 2026 CCPC National Invitational Contest (Qinhuangdao). Explore the complete <a href="{{ site.url }}{{ site.baseurl }}/competitions">🏆 competition record</a>.</p>
 </div>
 
 {% if site.data.grants %}
