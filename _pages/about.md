@@ -44,7 +44,7 @@ permalink: /about/
 
 <div class="section-card">
 <h3>Competitions</h3>
-<p>I actively participate in programming, robotics, and embodied AI competitions. My recent results include silver medals in the ICPC Asia East Regional Contest in 2024 and 2025, as well as a bronze medal in the ICPC Asia East Continent Final in 2025.</p>
+<p>I actively participate in programming, robotics, and embodied AI competitions. My recent results include a Gold Prize in the 2026 CCPC National Invitational Contest (Qinhuangdao), silver medals in the ICPC Asia East Regional Contest in 2024 and 2025, and a bronze medal in the ICPC Asia East Continent Final in 2025.</p>
 <p>For a complete list of results, please visit the <a href="{{ site.url }}{{ site.baseurl }}/competitions">Competitions</a> page.</p>
 </div>
 
