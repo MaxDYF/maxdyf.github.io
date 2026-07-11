@@ -8,14 +8,15 @@ permalink: /
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
 <div class="chip-container" markdown="0">
-<!-- <span class="chip">Algorithm </span> -->
 <span class="chip">Robotics</span>
 <span class="chip">Embodied AI</span>
 </div>
 
-I am Yifei Deng (邓逸飞), a 3-year undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus. My research interest focuses on Embodied AI，especially on how to scale up simulated data and narrow down the gap between simulation and reality.
+I am Yifei Deng (邓逸飞), a third-year undergraduate student in Computer Science and Technology at Northeastern University at Qinhuangdao. My research interests lie in embodied AI, particularly in scaling simulated data and bridging the gap between simulation and reality.
 
-I have participated in serveral programming contests, and won Silver Medal in ICPC Asia East Region Contest (2024, 2025), and Bronze Medal in ICPC Asia East Continent Final (2025).
+I have participated in several programming contests, earning silver medals in the ICPC Asia East Regional Contest in 2024 and 2025, as well as a bronze medal in the ICPC Asia East Continent Final in 2025.
+
+I am currently a Research Assistant at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation. Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025, where I worked on benchmarks for robots in industrial environments.
 
 {% comment %}
 Default template content for a theoretical-physics profile. Replace with your own
