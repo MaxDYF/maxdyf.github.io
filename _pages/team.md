@@ -7,8 +7,6 @@ permalink: /team/
 
 ## Team
 
-**We are looking for new team members!**
-
 ## PI
 
 <div class="section-card">
@@ -75,11 +73,3 @@ permalink: /team/
 </table>
 </div>
 {% endif %}
-
-{% comment %}
-Default template administrative-support placeholder. Add a real contact before enabling.
-
-## Administrative Support
-
-<a href="mailto:exampleemail@gmail.com">Example staff</a> is helping us (and other groups) with administration.
-{% endcomment %}

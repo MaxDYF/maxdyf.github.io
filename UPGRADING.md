@@ -7,12 +7,13 @@ If you're already using the old version of this template, follow these steps to 
 The new config uses a simplified format. Move these fields:
 
 **Old format (remove):**
+
 ```yaml
-title: Richard Feynman
+title: Your Name
 affiliation: >
-  Richard Feynman<br/>
-  Professor of Physics<br/>
-  California Institute of Technology
+  Your Name<br/>
+  Your Role<br/>
+  Your Institution
 location: >
   ...
 contact: >
@@ -20,12 +21,13 @@ contact: >
 ```
 
 **New format (add):**
+
 ```yaml
-name: "Richard Feynman"
-title: "Professor of Physics"
-institution: "California Institute of Technology"
-email: richard@university.edu
-photo: headshot.jpg
+name: "Your Name"
+title: "Your Role"
+institution: "Your Institution"
+email: you@university.edu
+photo: headshot.png
 links:
   google_scholar: "..."
   github: "..."
@@ -41,14 +43,15 @@ Basic PI info (name, photo, email, links) now lives in `_config.yml`. The `pi.ym
 
 ```yaml
 - education:
-    - "(1942) Ph.D. Physics, Princeton University"
+    - "(2023) Degree, Your University"
   educationshort:
-    - "(1942) Ph.D. Physics, Princeton"
+    - "(2023) Degree, Your University"
 ```
 
 ## 3. Organize Images (Optional)
 
 New subdirectories are available:
+
 - `images/team/` — team member photos
 - `images/research/` — research thumbnails
 - `images/banner/` — banner images

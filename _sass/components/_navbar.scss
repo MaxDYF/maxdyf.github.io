@@ -21,15 +21,23 @@
 }
 
 .navbar-brand {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-primary) !important;
-  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-muted) !important;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: all var(--transition-fast);
 
-  img {
-    border-radius: 0;
-    opacity: 0.85;
+  &:hover {
+    color: var(--accent) !important;
+    border-color: var(--accent);
+    background-color: var(--accent-light);
   }
 }
 
