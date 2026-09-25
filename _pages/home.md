@@ -14,7 +14,7 @@ permalink: /
 
 ### 👋 About Me
 
-I am **Yifei Deng (邓逸飞)**, a third-year undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus.
+I am **Yifei Deng**, an undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus.
 
 ### 🔬 Research Focus
 
