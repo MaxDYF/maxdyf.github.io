@@ -27,6 +27,10 @@
       {% endfor %}
     {% endif %}
 
+  </div>
+  </div>
+  {% if entry.summary %}<p class="pub-summary">{{ entry.summary | escape }}</p>{% endif %}
+
     <div class="pub-actions">
       {% if entry.pdf %}
       <a href="{{ entry.pdf }}" target="_blank" rel="noopener" class="btn-pill btn-pdf">PDF</a>
@@ -42,9 +46,6 @@
       {% if entry.abstract %}<button class="btn-pill btn-abstract" data-toggle-target="abs-{{ entry.key }}">Abstract</button>{% endif %}
     </div>
 
-  </div>
-  </div>
-  {% if entry.summary %}<p class="pub-summary">{{ entry.summary | escape }}</p>{% endif %}
   <div class="pub-collapse" id="bib-{{ entry.key }}"><pre>{{ entry.bibtex | escape }}</pre></div>
   {% if entry.abstract %}<div class="pub-collapse" id="abs-{{ entry.key }}"><pre>{{ entry.abstract | escape }}</pre></div>{% endif %}
 </div>
