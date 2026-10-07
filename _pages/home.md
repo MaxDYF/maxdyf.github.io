@@ -26,6 +26,12 @@ I am currently a **Research Assistant** at The Hong Kong University of Science a
 
 Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025, where I worked on benchmarks for robots in industrial environments.
 
+### Publications
+
+<div class="home-publications" id="pubList">
+{% bibliography --query @unpublished %}
+</div>
+
 ### 🏆 Competitions
 
 I have participated in several programming contests, earning **silver medals** in the ICPC Asia East Regional Contest in 2024 and 2025, as well as a **bronze medal** in the ICPC Asia East Continent Final in 2025.

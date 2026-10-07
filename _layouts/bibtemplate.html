@@ -1,57 +1,50 @@
 ---
 ---
 
-<div class="pub-entry" data-pub-searchable>
-  <div class="text-justify">{{ reference }}</div>
-
-  <!-- You can use the below to make your name bold -->
-  <!-- <div class="text-justify">{{ reference | replace_first: 'Bryngelson, S. H.', '<b>Bryngelson, S. H.</b>' }}</div> -->
-
-  {% assign bibtest = false %}
-  {% if entry.file %}
-  {% assign bibfile = "/papers/" | append: entry.file %}
-  {% for file in site.static_files %}
-    {% if file.path contains bibfile %}
-     {% assign bibtest = true %}
-    {% endif %}
-  {% endfor %}
+{% assign authors = entry.author | publication_author_names %}
+{% assign equal_contributors = entry.equal_contributors | split: ';' %}
+<div class="pub-entry{% if entry.preview %} pub-entry--illustrated{% endif %}" data-pub-searchable>
+  <h4 class="pub-title"><a href="{{ entry.url | default: '#' }}" target="_blank" rel="noopener">{{ entry.title | escape }}</a></h4>
+  <div class="pub-details">
+  {% if entry.preview %}
+  <a class="pub-preview" href="{{ '/images/publications/' | append: entry.preview | relative_url }}" target="_blank" rel="noopener" aria-label="View full figure for {{ entry.title | escape }}">
+    <img src="{{ '/images/publications/' | append: entry.preview | relative_url }}" alt="{{ entry.preview_alt | default: entry.title | escape }}" loading="lazy">
+  </a>
   {% endif %}
 
-  <div class="pub-actions">
-    {% if bibtest %}
-    <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank" class="btn-pill btn-pdf">PDF</a>
+  <div class="pub-body">
+    <p class="pub-authors">
+      {% for author in authors %}<span class="pub-author">{% if author == site.name %}<strong>{{ author | escape }}</strong>{% else %}{{ author | escape }}{% endif %}{% if equal_contributors contains author %}<sup>*</sup>{% endif %}{% unless forloop.last %},{% endunless %}</span>{% unless forloop.last %} {% endunless %}{% endfor %}
+    </p>
+    {% if entry.equal_contributors %}<p class="pub-contribution">* Equal contribution.</p>{% endif %}
+    <p class="pub-venue">{% if entry.type == 'unpublished' %}arXiv preprint{% else %}{{ entry.journal | default: entry.booktitle | default: entry.note | escape }}{% endif %} · {{ entry.year }}</p>
+
+    {% assign bibtest = false %}
+    {% if entry.file %}
+      {% assign bibfile = '/papers/' | append: entry.file %}
+      {% for file in site.static_files %}
+        {% if file.path contains bibfile %}{% assign bibtest = true %}{% endif %}
+      {% endfor %}
     {% endif %}
 
-    {% if entry.doi %}
-      {% if entry.type == 'unpublished' %}
-      <a href="{{ entry.doi | prepend: 'https://arxiv.org/abs/' }}" target="_blank" class="btn-pill btn-arxiv">arXiv</a>
-      {% else %}
-      <a href="{{ entry.doi | prepend: 'http://doi.org/' }}" target="_blank" class="btn-pill btn-doi">DOI</a>
+    <div class="pub-actions">
+      {% if entry.pdf %}
+      <a href="{{ entry.pdf }}" target="_blank" rel="noopener" class="btn-pill btn-pdf">PDF</a>
+      {% elsif bibtest %}
+      <a href="{{ '/papers/' | append: entry.file | relative_url }}" target="_blank" rel="noopener" class="btn-pill btn-pdf">PDF</a>
       {% endif %}
-    {% endif %}
+      {% if entry.arxiv %}
+      <a href="https://arxiv.org/abs/{{ entry.arxiv }}" target="_blank" rel="noopener" class="btn-pill btn-arxiv">arXiv</a>
+      {% elsif entry.doi %}
+      <a href="https://doi.org/{{ entry.doi }}" target="_blank" rel="noopener" class="btn-pill btn-doi">DOI</a>
+      {% endif %}
+      <button class="btn-pill btn-bib" data-toggle-target="bib-{{ entry.key }}">BIB</button>
+      {% if entry.abstract %}<button class="btn-pill btn-abstract" data-toggle-target="abs-{{ entry.key }}">Abstract</button>{% endif %}
+    </div>
 
-    {% if entry.type == 'unpublished' or entry.type == 'article' or entry.type == 'thesis' or entry.type == 'inproceedings' or entry.type == 'report' %}
-    <button class="btn-pill btn-bib" data-toggle-target="bib-{{ entry.key }}">BIB</button>
-    {% endif %}
-
-    {% if entry.abstract %}
-    <button class="btn-pill btn-abstract" data-toggle-target="abs-{{ entry.key }}">Abstract</button>
-    {% endif %}
   </div>
-
-  {% if entry.abstract %}
-  <div class="pub-collapse" id="bib-{{ entry.key }}">
-    <pre>{{ entry.bibtex | remove: "entry.abstract" }}</pre>
   </div>
-  {% else %}
-  <div class="pub-collapse" id="bib-{{ entry.key }}">
-    <pre>{{ entry.bibtex }}</pre>
-  </div>
-  {% endif %}
-
-  {% if entry.abstract %}
-  <div class="pub-collapse" id="abs-{{ entry.key }}">
-    <pre>{{ entry.abstract }}</pre>
-  </div>
-  {% endif %}
+  {% if entry.summary %}<p class="pub-summary">{{ entry.summary | escape }}</p>{% endif %}
+  <div class="pub-collapse" id="bib-{{ entry.key }}"><pre>{{ entry.bibtex | escape }}</pre></div>
+  {% if entry.abstract %}<div class="pub-collapse" id="abs-{{ entry.key }}"><pre>{{ entry.abstract | escape }}</pre></div>{% endif %}
 </div>

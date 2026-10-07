@@ -3,26 +3,45 @@
 // =============================================================
 
 .pub-entry {
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
   position: relative;
 
-  &:last-child {
-    border-bottom: none;
-  }
-
   .pub-title {
+    margin: 0 0 var(--space-4);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
     font-weight: 600;
     color: var(--text-primary);
+
+    a { color: inherit; background-image: none; }
+    a:hover { color: var(--accent); }
   }
 
   .pub-authors {
-    font-size: 0.9375rem;
+    max-width: none;
+    margin-bottom: var(--space-2);
+    font-size: 0.8125rem;
+    line-height: 1.6;
     color: var(--text-secondary);
+
+    strong { color: var(--text-primary); }
+    .pub-author {
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 0.25em;
+
+      &:last-child { margin-right: 0; }
+    }
   }
 
   .pub-venue {
-    font-size: 0.875rem;
+    margin-bottom: 0;
+    font-size: 0.8125rem;
     color: var(--text-muted);
     font-style: italic;
   }
@@ -32,8 +51,70 @@
     flex-wrap: wrap;
     gap: var(--space-2);
     margin-top: var(--space-3);
+
+    .btn-arxiv {
+      background-color: var(--accent-light);
+      color: var(--accent);
+      border-color: var(--border-color);
+
+      &:hover { background-color: var(--accent); color: #fff; }
+    }
   }
 }
+
+.pub-entry--illustrated .pub-details {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+
+    .pub-preview { max-width: 180px; }
+  }
+}
+
+.pub-body { min-width: 0; }
+
+.pub-preview {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #fff;
+  background-image: none !important;
+  padding: var(--space-1);
+
+  img { display: block; width: 100%; height: auto; }
+
+  &:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+}
+
+.pub-contribution {
+  margin-bottom: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pub-summary { max-width: 80ch; font-size: 0.875rem; margin: var(--space-4) 0 0; }
+
+.home-publications ol.bibliography,
+#pubList > ol.bibliography {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li { max-width: none; margin-bottom: var(--space-4); }
+}
+
+.home-publications .pub-entry--illustrated .pub-details {
+  grid-template-columns: 160px minmax(0, 1fr);
+
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+.home-publications .pub-summary { display: none; }
 
 // Year badge — accent pill floated right
 .year-badge {
