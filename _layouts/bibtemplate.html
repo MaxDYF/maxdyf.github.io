@@ -4,7 +4,7 @@
 {% assign authors = entry.author | publication_author_names %}
 {% assign equal_contributors = entry.equal_contributors | split: ';' %}
 <div class="pub-entry{% if entry.preview %} pub-entry--illustrated{% endif %}" data-pub-searchable>
-  <h4 class="pub-title"><a href="{{ entry.url | default: '#' }}" target="_blank" rel="noopener">{{ entry.title | escape }}</a></h4>
+  <h4 class="pub-title"><a href="{{ entry.url | default: '#' }}" target="_blank" rel="noopener">{% if entry.title contains ':' %}{% assign title_name = entry.title | split: ':' | first | append: ':' %}<span class="pub-title-name">{{ title_name | escape }}</span>{{ entry.title | remove_first: title_name | escape }}{% else %}{{ entry.title | escape }}{% endif %}</a></h4>
   <div class="pub-details">
   {% if entry.preview %}
   <a class="pub-preview" href="{{ '/images/publications/' | append: entry.preview | relative_url }}" data-figure-preview aria-label="View full figure for {{ entry.title | escape }}">
