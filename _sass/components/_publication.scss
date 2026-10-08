@@ -12,7 +12,7 @@
 
   .pub-title {
     margin: 0 0 var(--space-4);
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--fluent-font);
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 600;
@@ -120,7 +120,7 @@
 .year-badge {
   display: inline-block;
   float: right;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--fluent-font);
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -202,7 +202,7 @@
   border-radius: var(--radius-full);
   background-color: var(--bg-card);
   color: var(--text-primary);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--fluent-font);
   font-size: 0.875rem;
   margin-bottom: var(--space-6);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);

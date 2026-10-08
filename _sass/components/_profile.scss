@@ -45,7 +45,7 @@
   }
 
   .profile-name {
-    font-family: 'Source Serif 4', Georgia, serif;
+    font-family: var(--fluent-font);
     font-size: 1.375rem;
     font-weight: 700;
     margin-bottom: var(--space-1);

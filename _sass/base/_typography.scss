@@ -1,20 +1,18 @@
 // =============================================================
-// Typography — Source Serif + DM Sans
+// Typography — Noto Sans SC + Ubuntu Sans Mono
 // =============================================================
 // Fonts loaded via <link> in head.html.
-// Source Serif 4: elegant variable-weight serif for headings
-// DM Sans: clean geometric sans for body with personality
+// Shared web font tokens are defined by the Fluent theme.
 
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, sans-serif;
+  font-family: var(--fluent-font);
   font-size: 1rem;
   line-height: 1.75;
   font-optical-sizing: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Serif 4', 'Georgia', 'Times New Roman', serif;
+  font-family: var(--fluent-font);
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text-primary);
@@ -58,7 +56,7 @@ em, i {
 }
 
 code, pre {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: var(--code-font);
   font-size: 0.875em;
 }
 

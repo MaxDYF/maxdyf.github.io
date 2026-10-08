@@ -12,19 +12,17 @@ permalink: /
 <span class="chip">🧠 Embodied AI</span>
 </div>
 
-### 👋 About Me
+<section class="home-section home-overview" markdown="1">
+
+### About Me
 
 I am **Yifei Deng**, an undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus.
 
-### 🔬 Research Focus
+### Research Focus
 
 My research interests lie in **Embodied AI**, particularly in scaling up simulated data and bridging the gap between simulation and reality.
 
-### 💼 Research Experience
-
-I am currently a **Research Assistant** at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.
-
-Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025, where I worked on benchmarks for robots in industrial environments.
+</section>
 
 ### Publications
 
@@ -32,6 +30,20 @@ Previously, I joined the Language and Intelligent Systems Lab at Northeastern Un
 {% bibliography --query @unpublished %}
 </div>
 
-### 🏆 Competitions
+<section class="home-section" markdown="1">
+
+### Research Experience
+
+I am currently a **Research Assistant** at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.
+
+Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025, where I worked on benchmarks for robots in industrial environments.
+
+</section>
+
+<section class="home-section" markdown="1">
+
+### Competitions
 
 I have participated in several programming contests, earning **silver medals** in the ICPC Asia East Regional Contest in 2024 and 2025, as well as a **bronze medal** in the ICPC Asia East Continent Final in 2025.
+
+</section>

@@ -1,4 +1,4 @@
-// Fluent-inspired web materials. All layout dimensions stay in their existing files.
+// Fluent-inspired materials, typography and compact content surfaces.
 :root {
   --accent: #087c83;
   --accent-hover: #056269;
@@ -22,12 +22,14 @@
   --shadow-md: 0 3px 8px rgba(32, 49, 69, 0.045), 0 14px 36px rgba(32, 49, 69, 0.06);
   --shadow-lg: 0 8px 16px rgba(32, 49, 69, 0.06), 0 20px 48px rgba(32, 49, 69, 0.09);
   --shadow-navbar: 0 3px 16px rgba(32, 49, 69, 0.06);
-  --fluent-font: 'Segoe UI', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fluent-font: 'Noto Sans SC', sans-serif;
+  --code-font: 'Ubuntu Sans Mono', monospace;
   // One corner scale across pages: controls 10/12px, surfaces 20px.
   --radius-sm: 0.625rem;
   --radius-md: 0.75rem;
   --radius-lg: 1.25rem;
   --radius-xl: 1.25rem;
+  --container-max: 1160px;
 }
 
 :root[data-bs-theme="dark"] {
@@ -64,6 +66,8 @@ body {
   background-attachment: fixed;
 }
 
+code, pre, kbd, samp { font-family: var(--code-font); }
+
 body::before,
 [data-bs-theme="dark"] body::before { opacity: 0.12; }
 
@@ -76,7 +80,7 @@ h1, h2, h3, h4, h5, h6,
 
 .home-hero { font-weight: 700; letter-spacing: -0.035em; }
 .home-hero-sub { font-style: normal; }
-.pub-entry .pub-title { font-family: var(--fluent-font); }
+.pub-entry .pub-title { font-family: var(--fluent-font); text-wrap: balance; }
 
 .navbar,
 [data-bs-theme="dark"] .navbar {
@@ -90,12 +94,47 @@ h1, h2, h3, h4, h5, h6,
 
 h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 
-.profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card {
+.profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .home-section {
   background: linear-gradient(145deg, var(--material-sheen), transparent 60%), var(--material-card);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
   box-shadow: inset 0 1px var(--material-edge), var(--shadow-sm);
+}
+
+.home-grid {
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: var(--space-8);
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.home-section {
+  padding: var(--space-6);
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--space-6);
+
+  h3 { margin: 0 0 var(--space-3); font-size: 1.125rem; }
+  h3:not(:first-child) { margin-top: var(--space-6); }
+  p { font-size: 0.9375rem; margin-bottom: var(--space-3); }
+  p:last-child { margin-bottom: 0; }
+}
+
+.home-overview h3:not(:first-child) {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.home-publications ol.bibliography > li { margin-bottom: var(--space-6); }
+
+.home-content > h3 { margin-top: var(--space-6); font-size: 1.25rem; }
+.home-hero-sub { margin-bottom: var(--space-6); }
+
+.home-sidebar {
+  .profile-card { padding: var(--space-6); }
+  .profile-photo { width: 112px; height: 112px; }
+  .section-card { padding: var(--space-6); }
+  .section-card > p:last-child { margin-bottom: 0; }
 }
 
 .profile-card::before {
@@ -130,6 +169,10 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
   &.active { background-color: var(--accent-light); }
   &.active::after { left: 35%; right: 35%; bottom: 0; }
 }
+
+.navbar-nav { gap: var(--space-2); }
+.navbar-brand { margin-right: var(--space-6); }
+.nav-link { letter-spacing: 0; }
 
 .btn-pill {
   display: inline-flex;
@@ -238,7 +281,7 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 
 @media (prefers-reduced-transparency: reduce) {
   :root, :root[data-bs-theme="dark"] { --material-card: var(--bg-card); --material-nav: var(--bg-primary); --material-control: var(--bg-card); }
-  .navbar, .profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .search-modal {
+  .navbar, .profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .home-section, .search-modal {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
