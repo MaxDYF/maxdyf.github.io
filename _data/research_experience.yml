@@ -1,0 +1,16 @@
+- institution: HKUST (Guangzhou)
+  institution_url: https://www.hkust-gz.edu.cn/
+  role: Research Assistant
+  period: Present
+  advisor: Haoang Li
+  logo: https://upload.wikimedia.org/wikipedia/en/8/85/Hong_Kong_University_of_Science_and_Technology_symbol.svg
+  logo_style: hkust
+  description: Developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.
+
+- institution: Northeastern University at Qinhuangdao
+  institution_url: https://www.neuq.edu.cn/
+  role: Language and Intelligent Systems Lab
+  period: Joined March 2025
+  logo: https://upload.wikimedia.org/wikipedia/zh/f/f4/Northeastern_University_%28China%29_logo.svg
+  logo_style: neu
+  description: Worked on benchmarks for robots in industrial environments.

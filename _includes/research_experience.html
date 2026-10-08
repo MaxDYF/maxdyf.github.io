@@ -1,0 +1,18 @@
+<div class="experience-list" markdown="0">
+{% for experience in site.data.research_experience %}
+<article class="experience-card">
+<a class="experience-logo experience-logo--{{ experience.logo_style }}" href="{{ experience.institution_url }}" aria-label="{{ experience.institution | escape }} website">
+<img src="{{ experience.logo }}" alt="{{ experience.institution | escape }} logo" loading="lazy" decoding="async">
+</a>
+<div class="experience-info">
+<div class="experience-heading">
+<h4><a href="{{ experience.institution_url }}">{{ experience.institution }}</a></h4>
+<span class="experience-period">{{ experience.period }}</span>
+</div>
+<p class="experience-role">{{ experience.role }}</p>
+{% if experience.advisor %}<p class="experience-advisor">Advised by <strong>{{ experience.advisor }}</strong></p>{% endif %}
+<p class="experience-description">{{ experience.description }}</p>
+</div>
+</article>
+{% endfor %}
+</div>

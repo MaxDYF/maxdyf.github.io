@@ -1,0 +1,33 @@
+- name: CCPC National Invitational Contest (Qinhuangdao)
+  year: 2026
+  award: Gold Prize
+  tier: gold
+- name: RoboCup · BAAI Embodied AI Challenge
+  year: 2025
+  award: 3rd Place
+  tier: bronze
+- name: ICPC Asia Chengdu Regional Contest
+  year: 2024
+  award: Silver Medal
+  tier: silver
+- name: ICPC Asia East Continent Final Contest
+  year: 2024
+  award: Bronze Medal
+  tier: bronze
+- name: ICPC Asia Shenyang Regional Contest
+  year: 2024
+  award: Silver Medal
+  tier: silver
+- name: ICPC Asia Nanjing Regional Contest
+  year: 2024
+  award: Silver Medal
+  tier: silver
+- name: RAICOM Robotics Competition
+  detail: Programming Track
+  year: 2024
+  award: First Prize
+  tier: gold
+- name: China Collegiate Programming Contest (Shenzhen Site)
+  year: 2023
+  award: Bronze Medal
+  tier: bronze

@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6,
 
 h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 
-.profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .home-section {
+.profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .experience-card, .competition-card, .card {
   background: linear-gradient(145deg, var(--material-sheen), transparent 60%), var(--material-card);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(24px) saturate(150%);
@@ -110,19 +110,12 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 }
 
 .home-section {
-  padding: var(--space-6);
-  border: 1px solid var(--border-color);
   margin-bottom: var(--space-6);
 
-  h3 { margin: 0 0 var(--space-3); font-size: 1.125rem; }
+  h3 { margin: 0 0 var(--space-3); font-size: 1.25rem; }
   h3:not(:first-child) { margin-top: var(--space-6); }
   p { font-size: 0.9375rem; margin-bottom: var(--space-3); }
   p:last-child { margin-bottom: 0; }
-}
-
-.home-overview h3:not(:first-child) {
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-color);
 }
 
 .home-publications ol.bibliography > li { margin-bottom: var(--space-6); }
@@ -281,8 +274,73 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 
 @media (prefers-reduced-transparency: reduce) {
   :root, :root[data-bs-theme="dark"] { --material-card: var(--bg-card); --material-nav: var(--bg-primary); --material-control: var(--bg-card); }
-  .navbar, .profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .home-section, .search-modal {
+  .navbar, .profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .card, .experience-card, .competition-card, .search-modal {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
+}
+
+// Compact research experience rows with institution marks.
+.experience-list { display: grid; gap: var(--space-4); margin-bottom: var(--space-6); }
+.experience-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--border-color);
+}
+.experience-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 88px;
+  padding: 0;
+  img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+}
+.experience-info { min-width: 0; }
+.experience-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  h4 { margin: 0; font-size: 1rem; line-height: 1.5; }
+  a { color: var(--text-primary); &:hover { color: var(--accent); } }
+}
+.experience-period { color: var(--text-muted); font-size: 0.75rem; white-space: nowrap; }
+.experience-info p { font-size: 0.875rem; margin: 0; line-height: 1.65; }
+.experience-role { color: var(--accent); font-weight: 500; padding-top: 6px; }
+.experience-advisor { color: var(--text-secondary); padding-top: 4px; }
+.experience-description { color: var(--text-secondary); padding-top: 12px; }
+@media (max-width: 600px) {
+  .experience-card { grid-template-columns: 1fr; gap: var(--space-4); padding: 1.25rem; }
+  .experience-logo { width: 112px; height: 72px; }
+}
+
+.competition-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-6) 0; }
+.competition-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: var(--space-4); padding: var(--space-6); border: 1px solid var(--border-color); align-items: start; }
+.competition-medal { display: flex; align-items: center; justify-content: center; height: 48px; border-radius: var(--radius-md); font-size: 1.125rem;
+  &--gold { color: #916313; background: rgba(207, 163, 58, 0.13); }
+  &--silver { color: #546879; background: rgba(110, 137, 160, 0.13); }
+  &--bronze { color: #965b36; background: rgba(183, 119, 77, 0.13); }
+}
+.competition-info { min-width: 0; }
+.competition-heading { display: flex; justify-content: space-between; gap: var(--space-3); align-items: baseline; }
+.competition-award { font-size: 0.8125rem; font-weight: 600; color: var(--accent); }
+.competition-year { font-size: 0.75rem; color: var(--text-muted); }
+.competition-info h4 { font-size: 0.9375rem; line-height: 1.6; margin: 4px 0 0; text-wrap: balance; }
+.competition-info p { font-size: 0.8125rem; color: var(--text-secondary); margin: 4px 0 0; }
+.competition-list--compact { grid-template-columns: 1fr; margin: 0 0 var(--space-4); }
+.competition-more { gap: var(--space-2); text-transform: none; }
+:root[data-bs-theme="dark"] .competition-medal {
+  &--gold { color: #e3bc69; }
+  &--silver { color: #b4c4d2; }
+  &--bronze { color: #deaa86; }
+}
+@media (max-width: 700px) {
+  .competition-list { grid-template-columns: 1fr; }
+  .competition-card { padding: 1.25rem; }
 }

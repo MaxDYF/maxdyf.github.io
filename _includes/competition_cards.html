@@ -1,0 +1,13 @@
+{% assign card_limit = include.limit | default: site.data.competitions.size %}
+<div markdown="0" class="competition-list{% if include.compact %} competition-list--compact{% endif %}">
+{% for competition in site.data.competitions limit:card_limit %}
+<article class="competition-card">
+<div class="competition-medal competition-medal--{{ competition.tier }}" aria-hidden="true"><i class="fas fa-trophy"></i></div>
+<div class="competition-info">
+<div class="competition-heading"><span class="competition-award">{{ competition.award }}</span><span class="competition-year">{{ competition.year }}</span></div>
+<h4>{{ competition.name }}</h4>
+{% if competition.detail %}<p>{{ competition.detail }}</p>{% endif %}
+</div>
+</article>
+{% endfor %}
+</div>
