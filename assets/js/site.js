@@ -269,3 +269,86 @@
   }
 
 })();
+
+// Animate the figure between its thumbnail bounds and the full-screen preview.
+(function () {
+  'use strict';
+  var viewer = document.getElementById('figurePreview');
+  if (!viewer || typeof viewer.showModal !== 'function') return;
+  var image = viewer.querySelector('.figure-dialog-image');
+  var close = viewer.querySelector('.figure-dialog-close');
+  var thumbnail;
+  var motion;
+  function reducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+  function thumbnailTransform(bounds) {
+    var target = image.getBoundingClientRect();
+    return 'translate(' + (bounds.left - target.left) + 'px, ' +
+      (bounds.top - target.top) + 'px) scale(' +
+      (bounds.width / target.width) + ', ' + (bounds.height / target.height) + ')';
+  }
+  // Sample a critically damped spring: zero initial velocity, smooth settling,
+  // and no overshoot. This approximates Apple's smooth spring, not its private tuning.
+  function animateFigure(from, to, duration) {
+    var start = new DOMMatrix(from === 'none' ? undefined : from);
+    var end = new DOMMatrix(to === 'none' ? undefined : to);
+    var frames = [];
+    var frequency = 9;
+    var endResponse = 1 - (1 + frequency) * Math.exp(-frequency);
+    for (var i = 0; i <= 72; i++) {
+      var time = i / 72;
+      var response = (1 - (1 + frequency * time) * Math.exp(-frequency * time)) / endResponse;
+      var values = ['a', 'b', 'c', 'd', 'e', 'f'].map(function (axis) {
+        return start[axis] + (end[axis] - start[axis]) * response;
+      });
+      frames.push({ offset: time, transform: 'matrix(' + values.join(',') + ')' });
+    }
+    return image.animate(frames, { duration: duration, easing: 'linear', fill: 'forwards' });
+  }
+  document.querySelectorAll('[data-figure-preview]').forEach(function (link) {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.addEventListener('click', function (event) {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      thumbnail = link.querySelector('img');
+      var bounds = thumbnail.getBoundingClientRect();
+      image.src = link.href;
+      image.alt = thumbnail.alt;
+      image.width = thumbnail.naturalWidth;
+      image.height = thumbnail.naturalHeight;
+      document.body.classList.add('figure-preview-open');
+      viewer.showModal();
+      if (!reducedMotion()) {
+        motion = animateFigure(thumbnailTransform(bounds), 'none', 720);
+      }
+      thumbnail.style.visibility = 'hidden';
+    });
+  });
+  function closePreview() {
+    if (!viewer.open || viewer.classList.contains('is-closing')) return;
+    if (reducedMotion()) { viewer.close(); return; }
+    viewer.classList.add('is-closing');
+    // Capture the current position so closing during the opening motion is seamless.
+    var current = getComputedStyle(image).transform;
+    if (motion) motion.cancel();
+    motion = animateFigure(current, thumbnailTransform(thumbnail.getBoundingClientRect()), 540);
+    motion.finished.then(function () { viewer.close(); }).catch(function () {});
+  }
+  close.addEventListener('click', closePreview);
+  viewer.addEventListener('cancel', function (event) {
+    event.preventDefault();
+    closePreview();
+  });
+  viewer.addEventListener('click', function (event) {
+    if (event.target !== viewer) return;
+    var bounds = viewer.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closePreview();
+  });
+  viewer.addEventListener('close', function () {
+    if (motion) { motion.cancel(); motion = null; }
+    if (thumbnail) thumbnail.style.visibility = '';
+    viewer.classList.remove('is-closing');
+    document.body.classList.remove('figure-preview-open');
+  });
+})();

@@ -3,21 +3,17 @@
   --accent: #087c83;
   --accent-hover: #056269;
   --accent-light: rgba(8, 124, 131, 0.08);
-  --bg-primary: #f3f6f9;
-  --bg-secondary: #eaf0f5;
+  --bg-primary: #f7f8fa;
+  --bg-secondary: #eef0f3;
   --bg-card: #ffffff;
   --text-primary: #202b36;
   --text-secondary: #4c5b69;
   --text-muted: #647383;
   --border-color: rgba(55, 76, 96, 0.14);
-  --material-card: rgba(255, 255, 255, 0.52);
+  --material-card: #ffffff;
   --material-nav: rgba(246, 249, 252, 0.64);
   --material-control: rgba(255, 255, 255, 0.64);
   --material-edge: rgba(255, 255, 255, 0.9);
-  --ambient-teal: rgba(103, 199, 190, 0.32);
-  --ambient-blue: rgba(128, 168, 226, 0.32);
-  --ambient-lilac: rgba(183, 168, 218, 0.20);
-  --material-sheen: rgba(255, 255, 255, 0.30);
   --shadow-sm: 0 2px 5px rgba(32, 49, 69, 0.035), 0 8px 24px rgba(32, 49, 69, 0.045);
   --shadow-md: 0 3px 8px rgba(32, 49, 69, 0.045), 0 14px 36px rgba(32, 49, 69, 0.06);
   --shadow-lg: 0 8px 16px rgba(32, 49, 69, 0.06), 0 20px 48px rgba(32, 49, 69, 0.09);
@@ -43,14 +39,10 @@
   --text-secondary: #c1cedb;
   --text-muted: #98aabd;
   --border-color: rgba(195, 214, 234, 0.16);
-  --material-card: rgba(35, 48, 63, 0.62);
+  --material-card: #24313f;
   --material-nav: rgba(22, 32, 44, 0.70);
   --material-control: rgba(47, 62, 79, 0.72);
   --material-edge: rgba(215, 233, 255, 0.07);
-  --ambient-teal: rgba(31, 119, 117, 0.34);
-  --ambient-blue: rgba(43, 89, 145, 0.36);
-  --ambient-lilac: rgba(88, 73, 125, 0.25);
-  --material-sheen: rgba(210, 229, 255, 0.035);
   --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.16);
   --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.15), 0 14px 36px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.18), 0 20px 48px rgba(0, 0, 0, 0.26);
@@ -59,17 +51,13 @@
 
 body {
   font-family: var(--fluent-font);
-  background-image:
-    radial-gradient(ellipse at 3% 10%, var(--ambient-teal), transparent 52%),
-    radial-gradient(ellipse at 98% 12%, var(--ambient-blue), transparent 55%),
-    radial-gradient(ellipse at 65% 92%, var(--ambient-lilac), transparent 52%);
-  background-attachment: fixed;
+  background-image: none;
 }
 
 code, pre, kbd, samp { font-family: var(--code-font); }
 
 body::before,
-[data-bs-theme="dark"] body::before { opacity: 0.12; }
+[data-bs-theme="dark"] body::before { display: none; }
 
 h1, h2, h3, h4, h5, h6,
 .home-hero, .profile-card .profile-name,
@@ -78,9 +66,32 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 600;
 }
 
-.home-hero { font-weight: 700; letter-spacing: -0.035em; }
-.home-hero-sub { font-style: normal; }
-.pub-entry .pub-title { font-family: var(--fluent-font); text-wrap: balance; }
+.home-hero {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.625rem;
+}
+
+.home-content > p.home-hero-sub {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  font-style: normal;
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.home-content > .chip-container { margin: 0 0 2rem; }
+.pub-entry .pub-title {
+  font-family: var(--fluent-font);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  @media (max-width: 600px) { font-size: 1rem; letter-spacing: 0; text-wrap: pretty; }
+}
 
 .navbar,
 [data-bs-theme="dark"] .navbar {
@@ -95,7 +106,7 @@ h1, h2, h3, h4, h5, h6,
 h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 
 .profile-card, .section-card, .card-academic, .pub-entry, .team-card, .research-card, .experience-card, .competition-card, .card {
-  background: linear-gradient(145deg, var(--material-sheen), transparent 60%), var(--material-card);
+  background: var(--material-card);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
@@ -109,19 +120,42 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
   @media (max-width: 900px) { grid-template-columns: 1fr; }
 }
 
+// Keep prose aligned with the cards and use one section rhythm.
 .home-section {
-  margin-bottom: var(--space-6);
+  margin-bottom: 2.25rem;
 
-  h3 { margin: 0 0 var(--space-3); font-size: 1.25rem; }
-  h3:not(:first-child) { margin-top: var(--space-6); }
-  p { font-size: 0.9375rem; margin-bottom: var(--space-3); }
+  h3 { margin: 0 0 0.875rem; }
+  h3:not(:first-child) { margin-top: 2.25rem; }
+  p {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+  }
   p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; }
 }
 
-.home-publications ol.bibliography > li { margin-bottom: var(--space-6); }
+.home-content > h3,
+.home-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
 
-.home-content > h3 { margin-top: var(--space-6); font-size: 1.25rem; }
-.home-hero-sub { margin-bottom: var(--space-6); }
+.home-content > h3 { margin: 2.25rem 0 1rem; }
+.home-publications ol.bibliography > li { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .home-hero { font-size: 2rem; }
+  .home-content > p.home-hero-sub { font-size: 0.875rem; }
+  .home-section p { font-size: 0.9375rem; line-height: 1.8; }
+  .home-section { margin-bottom: 2rem; }
+  .home-section h3:not(:first-child) { margin-top: 2rem; }
+  .home-content > h3 { margin-top: 2rem; }
+}
 
 .home-sidebar {
   .profile-card { padding: var(--space-6); }
@@ -130,11 +164,7 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
   .section-card > p:last-child { margin-bottom: 0; }
 }
 
-.profile-card::before {
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.5;
-}
+.profile-card::before { display: none; }
 
 .pub-entry, .section-card {
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
@@ -343,4 +373,74 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
 @media (max-width: 700px) {
   .competition-list { grid-template-columns: 1fr; }
   .competition-card { padding: 1.25rem; }
+}
+
+// In-page figure viewer, with a Fluent-style blurred backdrop.
+body.figure-preview-open { overflow: hidden; }
+.figure-dialog {
+  width: fit-content;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100dvh - 80px);
+  padding: 0;
+  margin: auto;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+  &::backdrop {
+    background: rgba(24, 30, 38, 0.40);
+    backdrop-filter: blur(18px) saturate(110%);
+    -webkit-backdrop-filter: blur(18px) saturate(110%);
+  }
+}
+.figure-dialog-close {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+  color: #303841;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 1.625rem;
+  line-height: 1;
+  cursor: pointer;
+  &:hover { background: #fff; }
+}
+.figure-dialog-image {
+  display: block;
+  width: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100dvh - 80px);
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.18);
+}
+@media (max-width: 600px) {
+  .figure-dialog, .figure-dialog-image { max-width: calc(100vw - 24px); }
+  .figure-dialog-close { right: 12px; }
+}
+@media (prefers-reduced-transparency: reduce) { .figure-dialog::backdrop { background: rgba(24, 30, 38, 0.85); backdrop-filter: none; -webkit-backdrop-filter: none; } }
+
+// The image uses measured thumbnail bounds; controls stay fixed in the viewport.
+.figure-dialog-image { transform-origin: top left; }
+.figure-dialog[open] {
+  .figure-dialog-close { animation: figure-fade-in 720ms cubic-bezier(0.32, 0.72, 0, 1) both; }
+  &::backdrop { animation: figure-fade-in 720ms cubic-bezier(0.32, 0.72, 0, 1) both; }
+  &.is-closing {
+    .figure-dialog-close { animation: figure-fade-out 540ms cubic-bezier(0.32, 0.72, 0, 1) both; }
+    &::backdrop { animation: figure-fade-out 540ms cubic-bezier(0.32, 0.72, 0, 1) both; }
+  }
+}
+@keyframes figure-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes figure-fade-out { from { opacity: 1; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .figure-dialog[open] {
+    .figure-dialog-close, &::backdrop { animation: none; }
+  }
 }

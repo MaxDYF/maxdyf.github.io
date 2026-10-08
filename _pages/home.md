@@ -16,9 +16,9 @@ permalink: /
 
 ### About Me
 
-I am Yifei Deng, an undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus.
+I am **Yifei Deng**, an undergraduate student in Computer Science and Technology at Northeastern University, Qinhuangdao Campus.
 
-I am currently a Research Assistant at The Hong Kong University of Science and Technology (Guangzhou), advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.
+I am currently a Research Assistant at The **Hong Kong University of Science and Technology (Guangzhou)**, advised by Haoang Li. My work focuses on developing simulation environments for mobile manipulation robots and building systems for embodied-data generation.
 
 Previously, I joined the Language and Intelligent Systems Lab at Northeastern University at Qinhuangdao in March 2025, where I worked on benchmarks for robots in industrial environments.
 

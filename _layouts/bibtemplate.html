@@ -7,7 +7,7 @@
   <h4 class="pub-title"><a href="{{ entry.url | default: '#' }}" target="_blank" rel="noopener">{{ entry.title | escape }}</a></h4>
   <div class="pub-details">
   {% if entry.preview %}
-  <a class="pub-preview" href="{{ '/images/publications/' | append: entry.preview | relative_url }}" target="_blank" rel="noopener" aria-label="View full figure for {{ entry.title | escape }}">
+  <a class="pub-preview" href="{{ '/images/publications/' | append: entry.preview | relative_url }}" data-figure-preview aria-label="View full figure for {{ entry.title | escape }}">
     <img src="{{ '/images/publications/' | append: entry.preview | relative_url }}" alt="{{ entry.preview_alt | default: entry.title | escape }}" loading="lazy">
   </a>
   {% endif %}

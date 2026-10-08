@@ -9,11 +9,7 @@
 }
 
 .team-card {
-  background: linear-gradient(
-    160deg,
-    var(--bg-card) 0%,
-    var(--bg-secondary) 100%
-  );
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: var(--space-8) var(--space-6);
