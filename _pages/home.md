@@ -4,14 +4,6 @@ layout: homelay
 sitemap: false
 permalink: /
 ---
-<h2 class="home-hero">{{ site.name }}</h2>
-<p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
-
-<div class="chip-container" markdown="0">
-<span class="chip">🤖 Robotics</span>
-<span class="chip">🧠 Embodied AI</span>
-</div>
-
 <section class="home-section home-overview" markdown="1">
 
 ### About Me
