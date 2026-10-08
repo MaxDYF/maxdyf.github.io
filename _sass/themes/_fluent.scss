@@ -121,7 +121,10 @@ h2[id], h3[id] { scroll-margin-top: 5.5rem; }
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: var(--space-8);
 
-  @media (max-width: 900px) { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    .home-sidebar { grid-row: 1; }
+  }
 }
 
 // Keep prose aligned with the cards and use one section rhythm.
