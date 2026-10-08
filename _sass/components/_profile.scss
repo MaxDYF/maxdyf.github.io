@@ -60,6 +60,22 @@
     margin-bottom: var(--space-1);
   }
 
+  .profile-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: var(--space-4);
+
+    .chip {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.71875rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+  }
+
   .profile-links {
     display: flex;
     justify-content: center;

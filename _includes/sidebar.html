@@ -3,6 +3,10 @@
 <h4 class="profile-name">{{ site.name }}</h4>
 <p class="profile-title">{{ site.title }}</p>
 <p class="profile-institution">{{ site.institution }}</p>
+<div class="profile-tags" aria-label="Research interests">
+<span class="chip">🤖 Robotics</span>
+<span class="chip">🧠 Embodied AI</span>
+</div>
 <div class="profile-links">
 {% if site.email %}<a href="mailto:{{ site.email }}" class="icon-link" title="Email"><i class="fa-solid fa-envelope"></i></a>{% endif %}
 {% if site.links.cv and site.links.cv != "" %}<a href="{{ site.url }}{{ site.baseurl }}/{{ site.links.cv }}" class="icon-link" title="CV"><i class="ai ai-cv"></i></a>{% endif %}
