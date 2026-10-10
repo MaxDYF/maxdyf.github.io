@@ -1,0 +1,14 @@
+<div class="education-list" markdown="0">
+{% for education in site.data.education %}
+<article class="education-card">
+<a class="education-logo" href="{{ education.institution_url }}" aria-label="{{ education.institution | escape }} website">
+<img src="{{ education.logo }}" alt="{{ education.institution | escape }} logo" loading="lazy" decoding="async">
+</a>
+<div class="education-info">
+<h4><a href="{{ education.institution_url }}">{{ education.display_name }}</a></h4>
+<p class="education-degree">{{ education.degree }}</p>
+</div>
+<span class="education-period">{{ education.period }}</span>
+</article>
+{% endfor %}
+</div>

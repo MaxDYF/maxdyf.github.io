@@ -1,57 +1,44 @@
-// =============================================================
-// Footer — warm, structured
-// =============================================================
-
+// A quiet, compact footer aligned with the page content.
 .site-footer {
-  background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  padding: var(--space-12) 0 var(--space-8);
-  margin-top: var(--space-16);
-  position: relative;
+  padding: 1.75rem 0;
+  margin-top: var(--space-12);
 
-  h5 {
-    font-family: var(--fluent-font);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-    margin-bottom: var(--space-4);
-    margin-top: 0;
-  }
-
-  p, a {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    line-height: 1.9;
-  }
-
-  a:hover {
-    color: var(--accent);
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
+  .footer-inner {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
-
-    @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
   }
-
+  .footer-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
   .footer-copyright {
-    text-align: center;
-    margin-top: var(--space-8);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; }
+  }
+  a { color: var(--text-secondary); background-image: none; }
+  a:hover { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+  .footer-credit {
+    max-width: none;
+    margin: 0.75rem 0 0;
     font-size: 0.6875rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    line-height: 1.6;
+    color: var(--text-muted);
+    a { color: inherit; }
+  }
+  @media (max-width: 600px) {
+    .footer-main { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   }
 }

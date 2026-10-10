@@ -1,33 +1,16 @@
 <footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <h5>About</h5>
-      <p>
-        {{ site.name }}<br>
-        {{ site.title }}<br>
-        {{ site.institution }}
-      </p>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <p class="footer-copyright">&copy; {{ "now" | date: "%Y" }} {{ site.name | escape }}</p>
+      <nav class="footer-links" aria-label="Contact links">
+        {% if site.email %}<a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>{% endif %}
+        {% if site.links.github and site.links.github != "" %}<a href="{{ site.links.github }}"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>{% endif %}
+        {% if site.links.orcid and site.links.orcid != "" %}<a href="{{ site.links.orcid }}"><i class="ai ai-orcid" aria-hidden="true"></i> ORCID</a>{% endif %}
+        {% if site.links.google_scholar and site.links.google_scholar != "" %}<a href="{{ site.links.google_scholar }}">Google Scholar</a>{% endif %}
+        {% if site.links.researchgate and site.links.researchgate != "" %}<a href="{{ site.links.researchgate }}">ResearchGate</a>{% endif %}
+      </nav>
     </div>
-    <div>
-      <h5>Contact</h5>
-      <p>
-        <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i> {{ site.email }}</a><br>
-        {% if site.links.github and site.links.github != "" %}<a href="{{ site.links.github }}"><i class="fa-brands fa-github"></i> GitHub</a><br>{% endif %}
-      </p>
-    </div>
-    <div>
-      <h5>Links</h5>
-      <p>
-        {% if site.links.google_scholar and site.links.google_scholar != "" %}<a href="{{ site.links.google_scholar }}"><i class="ai ai-google-scholar"></i> Google Scholar</a><br>{% endif %}
-        {% if site.links.researchgate and site.links.researchgate != "" %}<a href="{{ site.links.researchgate }}"><i class="ai ai-researchgate"></i> ResearchGate</a><br>{% endif %}
-        <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa-brands fa-github"></i> Use this template!</a>
-      </p>
-    </div>
-  </div>
-  <div class="footer-grid">
-    <div class="footer-copyright" style="grid-column: 1 / -1;">
-      &copy; {{ "now" | date: "%Y" }} {{ site.name | escape }}
-    </div>
+    <p class="footer-credit">Built with Jekyll &middot; <a href="https://github.com/sbryngelson/academic-website-template">Academic Website Template</a></p>
   </div>
 </footer>
 
